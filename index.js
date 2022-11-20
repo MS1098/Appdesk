@@ -14,8 +14,8 @@ app.use(express.json());
 app.use(cors());
 
 // routes
-app.use("/api/users", userRoutes);
-app.use("/api/auth", authRoutes);
+app.use("./server/api/users", userRoutes);
+app.use("./server/api/auth", authRoutes);
 
 
 __dirname = path.resolve();
