@@ -3,8 +3,8 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 const connection = require("./db");
-const userRoutes = require("./server/routes/users");
-const authRoutes = require("./server/routes/auth");
+const userRoutes = require("./routes/users");
+const authRoutes = require("./routes/auth");
 const path=require("path");
 // database connection
 connection();
@@ -14,8 +14,8 @@ app.use(express.json());
 app.use(cors());
 
 // routes
-app.use("./server/api/users", userRoutes);
-app.use("./server/api/auth", authRoutes);
+app.use("/api/users", userRoutes);
+app.use("/api/auth", authRoutes);
 
 
 __dirname = path.resolve();
